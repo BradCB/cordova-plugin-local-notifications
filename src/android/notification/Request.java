@@ -61,7 +61,7 @@ public final class Request {
     private final JSONObject spec;
 
     // The current trigger date
-    private Date triggerDate;
+    public Date triggerDate;
 
     /**
      * Create a request with a base date specified through the passed options.
@@ -234,7 +234,8 @@ public final class Request {
                 (Integer) every.opt("hour"),
                 (Integer) every.opt("day"),
                 (Integer) every.opt("month"),
-                (Integer) every.opt("year")
+                (Integer) every.opt("year"),
+                (Integer) every.opt("second") // Added second
         );
     }
 
