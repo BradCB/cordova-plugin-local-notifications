@@ -93,8 +93,6 @@ public class MatchTrigger extends IntervalTrigger {
     private Calendar getBaseTriggerDate(Date date) {
         Calendar cal = getCal(date);
 
-        cal.set(Calendar.SECOND, 0);
-
         if (matchers.get(0) != null) {
             cal.set(Calendar.MINUTE, matchers.get(0));
         } else {
@@ -118,7 +116,11 @@ public class MatchTrigger extends IntervalTrigger {
         if (matchers.get(4) != null) {
             cal.set(Calendar.YEAR, matchers.get(4));
         }
-
+        if (matchers.get(5) != null) {
+            cal.set(Calendar.SECOND, matchers.get(5));
+        } else {
+            cal.set(Calendar.SECOND, 0);
+        }
         return cal;
     }
 
